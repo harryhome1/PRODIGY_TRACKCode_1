@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double Fahrenheit, Celsius, Kelvin;
+    int options;
+
+    cout << "Welcome to Temperature Converter!\n";
+
+    do {
+        cout << "\nWhat would you like to do?\n";
+        cout << "1. Convert Fahrenheit to Celsius and Kelvin.\n";
+        cout << "2. Convert Celsius to Fahrenheit and Kelvin.\n";
+        cout << "3. Convert Kelvin to Fahrenheit and Celsius.\n";
+        cout << "Enter your choice (1, 2, or 3): ";
+        cin >> options;
+
+        switch(options) {
+            case 1:
+                cout << "Enter temperature in Fahrenheit: ";
+                cin >> Fahrenheit;
+                Celsius = (Fahrenheit - 32) * 5/9;
+                Kelvin = Celsius + 273.15;
+                cout << "Temperature in Celsius: " << Celsius << "°C\n";
+                cout << "Temperature in Kelvin: " << Kelvin << "K\n";
+                break;
+            case 2:
+                cout << "Enter temperature in Celsius: ";
+                cin >> Celsius;
+                Fahrenheit = Celsius * 9/5 + 32;
+                Kelvin = Celsius + 273.15;
+                cout << "Temperature in Fahrenheit: " << Fahrenheit << "°F\n";
+                cout << "Temperature in Kelvin: " << Kelvin << "K\n";
+                break;
+            case 3:
+                cout << "Enter temperature in Kelvin: ";
+                cin >> Kelvin;
+                Celsius = Kelvin - 273.15;
+                Fahrenheit = Celsius * 9/5 + 32;
+                cout << "Temperature in Fahrenheit: " << Fahrenheit << "°F\n";
+                cout << "Temperature in Celsius: " << Celsius << "°C\n";
+                break;
+            default:
+                cout<<endl;
+                cout << "Oops! That's not a valid option. Please try again.\n";
+        }
+    } while (options < 1 || options > 3);
+
+    return 0;
+}
